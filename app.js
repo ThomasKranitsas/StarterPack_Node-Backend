@@ -5,7 +5,6 @@
 /**
  * Contains express application configurations.
  */
-require('./bootstrap');
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = 'development';
 }
@@ -19,6 +18,11 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const logger = require('./common/logger');
 const _ = require('lodash');
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+
+mongoose.connect(config.MONGODB_URI);
 
 app.use(cors());
 app.use(bodyParser.json());

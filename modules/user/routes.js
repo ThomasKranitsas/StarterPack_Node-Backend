@@ -12,12 +12,12 @@ const UserRole = constants.UserRole;
 const jwtAuth = constants.Passports.jwt;
 
 module.exports = {
-  '/reset': {
+  '/users': {
     post: {
       auth: jwtAuth,
       access: [UserRole.SUPER_ADMIN],
-      controller: 'DemoController',
-      method: 'reset'
+      controller: 'UserController',
+      method: 'createUser'
     }
   }
 };
