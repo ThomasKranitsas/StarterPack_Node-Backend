@@ -1,15 +1,7 @@
 {
   "authSecret": "AUTH_SECRET",
-  "port":"PORT",
+  "port": "PORT",
   "logLevel": "LOG_LEVEL",
-  "version": "API_VERSION",
-  "dbConfig": {
-    "db_url": "DATABASE_URL",
-    "poolSize": "DB_POOL_SIZE",
-    "poolIdleTimeout": "DB_POOL_IDLE_TIMEOUT"
-  },
-  "mailConfig": {
-    "mailgunKey": "MAILGUN_KEY",
-    "mailgunDomain": "MAILGUN_DOMAIN"
-  }
+  "version": "VERSION",
+  "MONGODB_URI": "MONGODB_URI"
 }

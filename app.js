@@ -5,7 +5,6 @@
 /**
  * Contains express application configurations.
  */
-require('./bootstrap');
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = 'development';
 }
@@ -19,6 +18,11 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const logger = require('./common/logger');
 const _ = require('lodash');
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+
+mongoose.connect(config.MONGODB_URI);
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -67,3 +71,4 @@ const port = config.port;
 app.listen(port, '0.0.0.0');
 logger.info('Express server listening on port %d in %s mode', port, process.env.NODE_ENV);
 
+module.exports = app;
